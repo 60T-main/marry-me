@@ -12,11 +12,6 @@ function launchFireworks() {
   buttons.style.pointerEvents = "none";
   question.style.opacity = "0";
 
-  audio.setAttribute
-
-
-
-  // Start fireworks
   canvas.style.display = 'block';
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -74,13 +69,17 @@ function launchFireworks() {
 
   animate();
 
-  // Fade in altar after short delay
-  setTimeout(() => {
-    altar.style.opacity = 1;
 
-    // Then fade in characters after altar is visible
-    setTimeout(() => {
-      characters.style.opacity = 1;
-    }, 2000);
+
+  // Fade in altar after a short delay
+  setTimeout(() => {
+    altar.style.display = "grid";
+  characters.style.display = "grid";;
   }, 1000);
+  setTimeout(() => {
+    altar.style.opacity = "1";
+  }, 2000);
+  setTimeout(() => {
+    characters.style.opacity = "1";
+  }, 3000);
 }
