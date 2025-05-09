@@ -4,6 +4,7 @@ function launchFireworks() {
   const characters = document.getElementById('characters');
   const question = document.getElementById('question');
   const buttons = document.getElementById('buttons');
+  const after = document.getElementById('after');
   const audio = document.getElementById('audio');
   audio.controls = false
   audio.play()
@@ -74,7 +75,8 @@ function launchFireworks() {
   // Fade in altar after a short delay
   setTimeout(() => {
     altar.style.display = "grid";
-  characters.style.display = "grid";;
+  characters.style.display = "grid";
+  after.style.display = "grid";
   }, 1000);
   setTimeout(() => {
     altar.style.opacity = "1";
@@ -82,4 +84,7 @@ function launchFireworks() {
   setTimeout(() => {
     characters.style.opacity = "1";
   }, 3000);
+    setTimeout(() => {
+    after.style.opacity = "1";
+  }, 5000);
 }

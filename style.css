@@ -102,3 +102,15 @@ button:hover {
   top: 45%;
   z-index: 3;
 }
+#after {
+  font-size: 35px;
+  display: none;
+  width: 100%;
+  opacity: 0;
+  -webkit-text-stroke: 1px black; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2%;
+  transition: opacity 2s ease-in-out;
+}
