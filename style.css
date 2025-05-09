@@ -34,9 +34,10 @@ body, html {
 }
 
 button {
-  margin: 10px;
-  padding: 25px 40px;
-  font-size: 4em;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 50px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -97,7 +98,7 @@ button:hover {
 }
 
 #characters {
-  max-width: 70%;
-  top: 55%;
+  max-width: 60%;
+  top: 45%;
   z-index: 3;
 }
