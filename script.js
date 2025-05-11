@@ -1,20 +1,29 @@
 function launchFireworks() {
-  const canvas = document.getElementById('fireworksCanvas');
-  const altar = document.getElementById('altar');
-  const characters = document.getElementById('characters');
-  const question = document.getElementById('question');
-  const buttons = document.getElementById('buttons');
-  const after = document.getElementById('after');
-  const audio = document.getElementById('audio');
-  audio.controls = false
-  audio.play()
+  const canvas = document.getElementById("fireworksCanvas");
+  const altar = document.getElementById("altar");
+  const characters = document.getElementById("characters");
+  const question = document.getElementById("question");
+  const lika = document.getElementById("lika");
+  const buttons = document.querySelector(".buttons");
+  const after = document.getElementById("after");
+  const audio = document.getElementById("audio");
+  audio.controls = false;
+  audio.play();
 
-  buttons.style.opacity = "0";
-  buttons.style.pointerEvents = "none";
-  question.style.opacity = "0";
+  // Fade out question and buttons
 
-  canvas.style.display = 'block';
-  const ctx = canvas.getContext('2d');
+  question.style.animationPlayState = 'paused';
+  question.classList.remove('fadeIn');
+  question.classList.add('fade-out');
+  lika.classList.remove('fadeIn');
+  lika.classList.add('fade-out');
+  buttons.classList.remove('fadeIn');
+  buttons.classList.add('fade-out');
+  buttons.style.pointerEvents = "none"; // Disable buttons
+
+  // Start the fireworks canvas
+  canvas.style.display = "block";
+  const ctx = canvas.getContext("2d");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
@@ -39,7 +48,7 @@ function launchFireworks() {
         dx: Math.cos(angle) * speed,
         dy: Math.sin(angle) * speed,
         alpha: 1,
-        color: `hsl(${Math.random() * 360}, 100%, 50%)`
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
       });
     }
 
@@ -51,7 +60,7 @@ function launchFireworks() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     fireworks.forEach((particles, index) => {
-      particles.forEach(p => {
+      particles.forEach((p) => {
         p.x += p.dx;
         p.y += p.dy;
         p.alpha -= 0.01;
@@ -70,13 +79,11 @@ function launchFireworks() {
 
   animate();
 
-
-
   // Fade in altar after a short delay
   setTimeout(() => {
     altar.style.display = "grid";
-  characters.style.display = "grid";
-  after.style.display = "grid";
+    characters.style.display = "grid";
+    after.style.display = "grid";
   }, 1000);
   setTimeout(() => {
     altar.style.opacity = "1";
@@ -84,7 +91,8 @@ function launchFireworks() {
   setTimeout(() => {
     characters.style.opacity = "1";
   }, 3000);
-    setTimeout(() => {
+  setTimeout(() => {
     after.style.opacity = "1";
   }, 5000);
 }
+

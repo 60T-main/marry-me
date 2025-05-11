@@ -21,19 +21,37 @@ body, html {
   position: relative;
 }
 
+#lika {
+  font-size: 60px;
+  opacity: 0;
+  -webkit-text-stroke: 2px black;
+  position: relative;
+}
+
+
 #question {
   font-size: 60px;
   opacity: 0;
-  animation: fadeIn 3s forwards;
-  -webkit-text-stroke: 2px black; 
-}
-.buttons {
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeIn 3s forwards;
+  -webkit-text-stroke: 2px black;
+  animation-delay: 3s; 
+  position: relative;
 }
 
-button {
+
+.buttons {
+  animation-delay: 4s; 
+  position: relative;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.btn-1 {
   margin-left: 10px;
   margin-right: 10px;
   padding: 20px;
@@ -48,24 +66,97 @@ button {
 
 button:hover {
   transform: scale(1.1);
+} */
+
+.btn-77,
+.btn-77 *,
+.btn-77 :after,
+.btn-77 :before,
+.btn-77:after,
+.btn-77:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-77 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #ff69b4;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-77:disabled {
+  cursor: default;
+}
+.btn-77:-moz-focusring {
+  outline: auto;
+}
+.btn-77 svg {
+  vertical-align: middle;
+}
+.btn-77 [hidden] {
+  display: none;
+}
+.btn-77 {
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  border: 1px solid;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2em transparent;
+  box-sizing: border-box;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+  }
 }
 
-#question, .buttons {
-  transition: opacity 1s ease-out;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
-#question {
-  opacity: 1;
+.fadeOut {
+  animation: fadeOut 2s forwards;
 }
 
-.buttons {
-  opacity: 1;
+
+.fadeIn{
+  animation: fadeIn 3s forwards;
+
 }
+
+.fadeInDelayed {
+  animation-delay: 5s;
+}
+
+
 
 #altar, #characters {
   display: none;
   opacity: 0;
   transition: opacity 2s ease-in-out;
+  
 }
 
 #fireworksCanvas {
